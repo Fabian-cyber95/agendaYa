@@ -34,8 +34,5 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/businesses', businessRoutes); // ✅ nueva ruta montada
 
-// Puerto
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en: http://localhost:${PORT}`);
-});
+
+export default app;

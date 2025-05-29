@@ -5,8 +5,8 @@ import axios from "axios";
 const Register = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    nombre: "",
-    correo: "",
+    name: "",
+    email: "",
     password: "",
     rol: "user",
   });
@@ -47,9 +47,9 @@ const Register = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
-            name="nombre"
+            name="name"
             placeholder="Nombre completo"
-            value={formData.nombre}
+            value={formData.name}
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
@@ -57,9 +57,9 @@ const Register = () => {
 
           <input
             type="email"
-            name="correo"
+            name="email"
             placeholder="Correo electrónico"
-            value={formData.correo}
+            value={formData.email}
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
