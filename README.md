@@ -1,14 +1,30 @@
-# 🧠 Proyecto Base Full Stack MERN: Autenticación y Gestión de Usuarios
+# ⚙️ Backend - agendaYa
 
-Este proyecto es una **plantilla funcional básica** que integra un **frontend en React + Vite** con un **backend en Node.js + Express + MongoDB** para implementar:
+Backend del proyecto **agendaYa**, una aplicación para gestión de citas en salones de belleza y barberías.  
+Desarrollado con **Node.js**, **Express** y **MongoDB**.
 
-- Autenticación de usuarios (login y registro).
-- Gestión de usuarios desde un panel administrativo.
-- CRUD de usuarios con consumo de API REST desde el frontend.
-- Roles diferenciados (`admin` y `user`).
-- Redirección dinámica basada en el rol.
+---
 
-El propósito es **aprender e implementar la estructura base de un sistema real**, que puede escalar hacia dashboards, apps internas, SaaS, o ecommerce.
+## 🚀 Funcionalidades principales
+
+- Registro y autenticación de usuarios con roles (`admin`, `user`).
+- Seguridad con `bcryptjs` para el hash de contraseñas.
+- Autenticación y autorización basada en JWT.
+- Gestión de sesiones y cookies con `cookie-parser`.
+- CRUD completo para usuarios y otros recursos.
+- Subida de archivos con `multer`.
+- Soporte CORS para comunicación con frontend.
+- Estructura modular y escalable.
+
+---
+
+## 📦 Instalación
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/Fabian-cyber95/agendaYa.git
+
 
 ---
 
@@ -16,36 +32,32 @@ El propósito es **aprender e implementar la estructura base de un sistema real*
 
 ```
 .
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── config/
-│   └── server.js
-│
-└── frontend/
-    ├── src/
-    │   ├── pages/
-    │   ├── components/
-    │   └── App.jsx
+backend-mongodb/
+├── controllers/       # Lógica y controladores
+├── middlewares/       # Middlewares personalizados
+├── models/            # Modelos Mongoose
+├── routes/            # Definición de rutas
+├── config/            # Configuración general (BD, variables)
+├── uploads/           # Archivos subidos con multer
+├── .env               # Variables de entorno (no subir al repo)
+└── server.js          # Punto de entrada de la aplicación
+
 ```
 
 ---
 
-## 🚀 ¿Qué incluye?
+📦 Dependencias principales
+| Paquete       | Uso                             |
+| ------------- | ------------------------------- |
+| express       | Servidor HTTP                   |
+| mongoose      | ODM para MongoDB                |
+| bcryptjs      | Hash de contraseñas             |
+| jsonwebtoken  | Autenticación JWT               |
+| cookie-parser | Manejo de cookies               |
+| cors          | Permite peticiones cross-origin |
+| multer        | Subida de archivos              |
+| dotenv        | Variables de entorno            |
 
-### ✅ Frontend (React + Vite + TailwindCSS)
-- Login y Registro con validación básica.
-- Redirección automática al dashboard según el rol.
-- Panel admin con tabla de usuarios.
-- Modal para editar usuario.
-- Eliminación directa desde la UI.
-
-### ✅ Backend (Node.js + Express + MongoDB)
-- Endpoints para login, registro, obtener, editar y eliminar usuarios.
-- Conexión segura con MongoDB (local o Atlas).
-- Separación por controladores y rutas.
-- Roles con lógica condicional (`admin`/`user`).
 
 ---
 
@@ -68,7 +80,7 @@ npm install
 Crear archivo `.env` con:
 
 ```env
-PORT=5000
+PORT=5135
 MONGO_URI=mongodb://localhost:27017/auth_db
 ```
 
@@ -111,38 +123,21 @@ Puedes insertar usuarios manualmente en MongoDB o registrarte desde el frontend 
 |--------|-------------------------|------------------------------|
 | POST   | `/api/register`         | Registro de usuario          |
 | POST   | `/api/login`            | Login de usuario             |
-| GET    | `/api/users`            | Obtener todos los usuarios   |
-| DELETE | `/api/users/:id`        | Eliminar usuario por ID      |
 | PUT    | `/api/users/:id`        | Actualizar usuario por ID    |
 
 ---
 
-## 📚 Recomendaciones de uso y ampliación
-
-Este proyecto es ideal para:
-
-- Aprender a conectar React con APIs.
-- Practicar control de roles.
-- Crear un panel administrativo real.
-- Escalar hacia apps con autenticación segura, JWT, o dashboards más complejos.
-
-Puedes ampliar:
-
-- Uso de `bcrypt` para encriptar contraseñas.
-- JWT para manejo de sesión.
-- Middleware para proteger rutas.
-- Integración con MongoDB Atlas o servicios cloud.
 
 ---
 
 ## 🤝 Créditos
 
-Desarrollado por @hdtoledo 
+📫 Contacto
+Desarrollado por Fabian-cyber95
+
 
 🚀 Proyecto educativo, libre para modificación y mejora.
 
 ---
 
-## 📝 Licencia
 
-Este proyecto se entrega bajo la licencia MIT. Puedes modificarlo, distribuirlo y adaptarlo a tus necesidades.
