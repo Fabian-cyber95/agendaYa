@@ -61,16 +61,10 @@ backend-mongodb/
 
 ---
 
-## 🧪 Cómo correr el proyecto
 
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/hdtoledo/mern-user-dashboard.git
-cd proyecto-base-fullstack
 ```
 
-### 2. Configurar el backend
+###  Configurar el backend
 
 ```bash
 cd backend
